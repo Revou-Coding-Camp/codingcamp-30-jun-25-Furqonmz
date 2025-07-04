@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full bg-white shadow z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="font-bold text-lg text-yellow-500">REVO</div>
+      <nav class="space-x-4">
+        <a href="#home" class="hover:text-yellow-500">Home</a>
+        <a href="#profile" class="hover:text-yellow-500">Profile</a>
+        <a href="#headquarters" class="hover:text-yellow-500">Headquarters</a>
+        <a href="#message" class="hover:text-yellow-500">Message Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center px-4">
+      <h1 class="text-4xl font-bold mb-2">Hi Harfi, Welcome to My Website</h1>
+      <p class="text-lg text-gray-600">Ini adalah website latihan pertama</p>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="py-20 bg-white px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Saya Harfi, seorang software engineer yang sedang belajar membuat website menggunakan Tailwind CSS dan JavaScript.
+          Ini adalah bagian profil di mana saya menceritakan tentang perjalanan saya dalam dunia coding!
+        </p>
+      </div>
+    </section>
+
+    <!-- Headquarters Section -->
+    <section id="headquarters" class="py-20 bg-gray-100 px-4">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-semibold">Our Headquarters</h2>
+      </div>
+      <div class="flex flex-wrap justify-center gap-10">
+        <div class="flex flex-col items-center">
+          <div class="w-24 h-24 rounded-full border-2 border-gray-500"></div>
+          <p class="mt-2">Jakarta</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-24 h-24 rounded-full border-2 border-gray-500"></div>
+          <p class="mt-2">Bandung</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-24 h-24 rounded-full border-2 border-gray-500"></div>
+          <p class="mt-2">Surabaya</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message Us Section -->
+    <section id="message" class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-2xl font-semibold mb-6">Message Us</h2>
+        <div class="flex flex-col md:flex-row gap-10">
+          <!-- Form -->
+          <form id="messageForm" class="w-full md:w-1/2 space-y-4">
+            <input type="text" id="nama" placeholder="Nama" class="w-full border p-2 rounded" required>
+            <input type="date" id="tanggal" class="w-full border p-2 rounded" required>
+            <div class="flex items-center space-x-4">
+              <label><input type="radio" name="gender" value="Laki - Laki" required> Laki-Laki</label>
+              <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+            </div>
+            <textarea id="pesan" placeholder="Pesan" rows="4" class="w-full border p-2 rounded" required></textarea>
+            <button type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Submit</button>
+          </form>
+
+          <!-- Output -->
+          <div class="w-full md:w-1/2 border p-4 bg-gray-50 rounded">
+            <p><strong>Current time:</strong> <span id="time"></span></p>
+            <p><strong>Nama:</strong> <span id="outNama"></span></p>
+            <p><strong>Tanggal Lahir:</strong> <span id="outTanggal"></span></p>
+            <p><strong>Jenis Kelamin:</strong> <span id="outGender"></span></p>
+            <p><strong>Pesan:</strong> <span id="outPesan"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-gray-100 border-t">
+    Created by Revo
+  </footer>
+
+  <!-- Script -->
+  <script></script>
+
+</body>
+</html>
