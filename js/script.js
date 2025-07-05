@@ -5,17 +5,11 @@ function setName() {
         return;
     }
 
-    // simpan ke localStorage
     localStorage.setItem("userName", name);
-
-    // tampilkan greeting
     document.getElementById("greeting").textContent = `Hi ${name}, Welcome to Website`;
-
-    // sembunyikan form input
     document.getElementById("nameInputContainer").style.display = "none";
     }
 
-    // kalau sebelumnya sudah tersimpan
     window.onload = function () {
     localStorage.removeItem("userName");
     const savedName = localStorage.getItem("userName");
@@ -25,15 +19,18 @@ function setName() {
     }
     };
 
-    
+    window.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("messageForm");
     const timeEl = document.getElementById("time");
 
     function updateTime() {
       const now = new Date();
-      timeEl.innerText = now.toUTCString();
+      const gmt7 = new Date(now.getTime() + (7 * 60 * 60 * 1000));
+      timeEl.innerText = gmt7.toUTCString().replace("GMT", "GMT+7");
     }
-    updateTime(); setInterval(updateTime, 1000);
+
+    updateTime();
+    setInterval(updateTime, 1000);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -53,5 +50,28 @@ function setName() {
       document.getElementById("outGender").innerText = gender.value;
       document.getElementById("outPesan").innerText = pesan;
 
-      form.reset(); // Clear form
+      form.reset();
     });
+  });
+
+
+  const data = {
+    alat: {
+      title: "Alat Ukur Berat dan Tinggi Bayi",
+      image: "img/alat.jpg",
+      description: "Ini adalah portofolio dari sistem alat ukur bayi digital yang dirancang untuk memantau pertumbuhan dan perkembangan bayi secara akurat dan efisien. Memanfaatkan sensor loadcell dan ultrasonik sehingga mengukur berat dan tinggi sekaligus"
+    },
+    website: {
+      title: "Website Alat Ukur Berat dan Tinggi Bayi",
+      image: "img/website_alat.png",
+      description: "Ini adalah portofolio dari website alat yang dirancang. Petugas kesehatan dapat memantau data berat dan tinggi dari pengukuran yang dilakukan pada website ini"
+    },
+  };
+
+  function showContent(city) {
+    const content = data[city];
+    document.getElementById("contentTitle").textContent = content.title;
+    document.getElementById("contentImage").src = content.image;
+    document.getElementById("contentDescription").textContent = content.description;
+    document.getElementById("portfolioContent").classList.remove("hidden");
+  }
